@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>欢迎进入</title>
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+  </head>
+  <body>
+    <div class="mb-box">
+        <div class="bb">
+            <h2>小狗🐶</h2>
+            <div class="bb_text">
+                <div id="code">
+                
+                </div>
+            </div>
+            <p class="bb_myname">
+                嘿嘿<br/>
+            </p>
+
+        </div>
+    </div>
+        <script>
+        Element.prototype.typewriter = function(a) {
+            var d = this,
+                c = d.innerHTML,
+                b = 0;
+            d.innerHTML = "";
+            var e = setInterval(function() {
+                var f = c.substr(b, 1);
+                if (f == "<") {
+                    b = c.indexOf(">", b) + 1
+                } else {
+                    b++
+                }
+                d.innerHTML = c.substring(0, b) + (b & 1 ? "_" : "");
+                if (b >= c.length) {
+                    clearInterval(e)
+                }
+            }, 150)
+            return this
+
+        }
+        document.getElementById("code").typewriter();
+    </script>
+
+  </body>
+</html>
